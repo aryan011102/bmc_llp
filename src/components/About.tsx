@@ -55,7 +55,7 @@ export default function About() {
             <span className="text-[var(--primary)]">Trust & Excellence</span>
           </h2>
           <p className="mt-4 text-[var(--gray-600)] leading-relaxed">
-            Founded in 1976 in Kolkata, Bengal Machinery Corporation LLP has
+            Founded in 1977 in Kolkata, Bengal Machinery Corporation LLP has
             grown into one of the region&apos;s most trusted names in industrial
             switchgear and electrical equipment. We combine deep local presence
             with global product expertise.
@@ -93,7 +93,7 @@ export default function About() {
                 relationships&mdash;supported by transparent service, high
                 product availability, and a strong after-sales support network.
                 For us, every interaction is an opportunity to add value and
-                uphold the trust our customers have placed in us since 1976.
+                uphold the trust our customers have placed in us since 1977.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">
@@ -124,7 +124,7 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
-                <p className="text-3xl font-bold text-[var(--primary)]">1976</p>
+                <p className="text-3xl font-bold text-[var(--primary)]">1977</p>
                 <p className="text-sm text-[var(--gray-600)] mt-1">
                   Year Founded
                 </p>

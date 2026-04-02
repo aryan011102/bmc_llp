@@ -46,7 +46,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="tel:+919830012345"
+              href="tel:03322371073"
               className="bg-[var(--primary)] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[var(--primary-dark)] transition-colors duration-200 text-sm"
             >
               Call Us
@@ -99,7 +99,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="tel:+919830012345"
+                href="tel:03322371073"
                 className="mx-4 mt-2 bg-[var(--primary)] text-white px-5 py-2.5 rounded-lg font-medium text-center hover:bg-[var(--primary-dark)] transition-colors duration-200"
               >
                 Call Us

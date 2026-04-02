@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           <div className="animate-fade-in-up">
             <span className="inline-block bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-white/20">
-              Trusted Since 1976
+              Trusted Since 1977
             </span>
           </div>
 

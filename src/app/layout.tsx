@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Bengal Machinery Corporation LLP | Industrial Switchgear & Electrical Equipment",
   description:
-    "Founded in 1976, BMC LLP is one of Kolkata's most trusted names in industrial switchgear and electrical equipment. Authorized channel partner for Schneider Electric, Lauritz Knudsen, CG Power, and more.",
+    "Founded in 1977, BMC LLP is one of Kolkata's most trusted names in industrial switchgear and electrical equipment. Authorized channel partner for Schneider Electric, Lauritz Knudsen, CG Power, and more.",
   keywords:
     "switchgear, electrical equipment, Kolkata, Schneider Electric, Lauritz Knudsen, CG Power, BMC LLP, industrial electrical, automation",
 };
