@@ -11,9 +11,17 @@ export default function Footer() {
                 alt="BMC LLP"
                 className="w-10 h-10 rounded-lg object-cover"
               />
+              <img
+                src="/be-logo.jpeg"
+                alt="Bengal Electricals"
+                className="w-10 h-10 rounded-lg object-cover"
+              />
               <div>
                 <p className="font-bold text-sm leading-tight">
                   Bengal Machinery Corporation LLP
+                </p>
+                <p className="font-bold text-sm leading-tight">
+                  / Bengal Electricals
                 </p>
               </div>
             </div>

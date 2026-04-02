@@ -18,18 +18,23 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
+          <a href="#home" className="flex items-center gap-2 sm:gap-3">
             <img
               src="/bmc-logo.jpeg"
               alt="Bengal Machinery Corporation LLP"
-              className="h-14 w-14 rounded-lg object-cover"
+              className="h-12 w-12 sm:h-14 sm:w-14 rounded-lg object-cover"
             />
-            <div>
-              <p className="font-bold text-[var(--primary)] text-xs sm:text-sm leading-tight">
-                Bengal Machinery
+            <img
+              src="/be-logo.jpeg"
+              alt="Bengal Electricals"
+              className="h-12 w-12 sm:h-14 sm:w-14 rounded-lg object-cover"
+            />
+            <div className="hidden sm:block">
+              <p className="font-bold text-[var(--primary)] text-sm leading-tight">
+                Bengal Machinery Corporation LLP
               </p>
-              <p className="font-bold text-[var(--primary)] text-xs sm:text-sm leading-tight">
-                Corporation LLP
+              <p className="font-bold text-[var(--primary)] text-sm leading-tight">
+                / Bengal Electricals
               </p>
             </div>
           </a>

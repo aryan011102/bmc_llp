@@ -26,7 +26,7 @@ const brands = [
   },
   {
     name: "GIC",
-    logo: "/brands/gic.png",
+    logo: "/brands/gic.webp",
     description: "Timers, relays and monitoring devices",
   },
   {
