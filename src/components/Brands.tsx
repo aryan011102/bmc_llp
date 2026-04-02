@@ -65,7 +65,7 @@ export default function Brands() {
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="max-h-36 max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className="max-h-36 max-w-full object-contain grayscale-0 sm:grayscale sm:group-hover:grayscale-0 transition-all duration-300"
                 />
               </div>
               <h3 className="font-semibold text-[var(--gray-900)] text-sm">
