@@ -24,11 +24,11 @@ export default function Navbar() {
               alt="Bengal Machinery Corporation LLP"
               className="h-14 w-14 rounded-lg object-cover"
             />
-            <div className="hidden sm:block">
-              <p className="font-bold text-[var(--primary)] text-sm leading-tight">
+            <div>
+              <p className="font-bold text-[var(--primary)] text-xs sm:text-sm leading-tight">
                 Bengal Machinery
               </p>
-              <p className="font-bold text-[var(--primary)] text-sm leading-tight">
+              <p className="font-bold text-[var(--primary)] text-xs sm:text-sm leading-tight">
                 Corporation LLP
               </p>
             </div>
