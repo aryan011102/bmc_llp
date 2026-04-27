@@ -1,3 +1,13 @@
+import Link from "next/link";
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Brands", href: "/brands" },
+  { label: "Products", href: "/products" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--gray-900)] text-white">
@@ -35,18 +45,16 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {["Home", "About", "Brands", "Products", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-[var(--gray-300)] hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[var(--gray-300)] hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

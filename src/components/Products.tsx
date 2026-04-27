@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const productData = [
@@ -249,8 +250,8 @@ export default function Products() {
           <p className="text-[var(--gray-600)] mb-4">
             Need a specific product or a complete system solution?
           </p>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--primary-dark)] transition-colors duration-200 text-sm"
           >
             Request a Quote
@@ -267,7 +268,7 @@ export default function Products() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

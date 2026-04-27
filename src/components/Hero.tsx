@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section
@@ -36,18 +38,18 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-in-up animation-delay-600">
-            <a
-              href="#products"
+            <Link
+              href="/products"
               className="bg-[var(--accent)] text-[var(--gray-900)] px-8 py-3.5 rounded-lg font-semibold hover:bg-yellow-400 transition-colors duration-200 text-sm"
             >
               Explore Products
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="bg-white/10 backdrop-blur-sm text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-200 border border-white/30 text-sm"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
 
           {/* Stats */}
