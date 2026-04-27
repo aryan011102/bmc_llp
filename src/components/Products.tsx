@@ -73,18 +73,20 @@ const productData = [
 
 const featuredShowcase = [
   {
+    company: "Bengal Machinery Corporation LLP",
     title: "Industrial Switchgear and Control Solutions",
     image: "/products/bmc-products.png",
     background: "bg-sky-50",
     description:
-      "A curated look at enclosures, breakers, push buttons, protection devices, and industrial control hardware for panel and plant applications.",
+      "A curated view of the switchgear, enclosures, breakers, push buttons, protection devices, and industrial control hardware supplied through Bengal Machinery Corporation LLP for panel and plant applications.",
   },
   {
+    company: "Bengal Electricals",
     title: "Motors, Metering, and Protection Devices",
     image: "/products/be-products.jpg",
     background: "bg-amber-50",
     description:
-      "A focused mix of motors, measuring instruments, switching devices, and protection products suited for demanding operational environments.",
+      "A focused presentation of the motors, measuring instruments, switching devices, and protection products handled by Bengal Electricals for demanding operational environments.",
   },
 ];
 
@@ -236,7 +238,7 @@ export default function Products() {
               </div>
               <div className="p-6 sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--primary)]">
-                  Featured Product View
+                  {item.company}
                 </p>
                 <h3 className="mt-3 text-xl font-bold text-[var(--gray-900)]">
                   {item.title}
