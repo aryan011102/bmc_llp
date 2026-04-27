@@ -232,7 +232,7 @@ export default function Products() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[280px] w-full object-cover object-center sm:h-[340px]"
+                    className="h-[280px] w-full object-contain object-center bg-white p-3 sm:h-[340px] sm:p-4"
                   />
                 </div>
               </div>
