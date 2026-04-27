@@ -76,7 +76,10 @@ const featuredShowcase = [
     company: "Bengal Machinery Corporation LLP",
     title: "Industrial Switchgear and Control Solutions",
     image: "/products/bmc-products.png",
-    background: "bg-sky-50",
+    background:
+      "bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,_#f3f8ff_0%,_#ffffff_100%)]",
+    badge: "BMC LLP Range",
+    highlights: ["Switchgear", "Protection", "Panels"],
     description:
       "A curated view of the switchgear, enclosures, breakers, push buttons, protection devices, and industrial control hardware supplied through Bengal Machinery Corporation LLP for panel and plant applications.",
   },
@@ -84,7 +87,10 @@ const featuredShowcase = [
     company: "Bengal Electricals",
     title: "Motors, Metering, and Protection Devices",
     image: "/products/be-products.jpg",
-    background: "bg-amber-50",
+    background:
+      "bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.18),_transparent_38%),linear-gradient(180deg,_#fff9ee_0%,_#ffffff_100%)]",
+    badge: "Bengal Electricals Range",
+    highlights: ["Motors", "Metering", "Control"],
     description:
       "A focused presentation of the motors, measuring instruments, switching devices, and protection products handled by Bengal Electricals for demanding operational environments.",
   },
@@ -225,14 +231,29 @@ export default function Products() {
           {featuredShowcase.map((item) => (
             <article
               key={item.title}
-              className="overflow-hidden rounded-3xl border border-[var(--gray-200)] bg-white shadow-[0_18px_40px_rgba(17,24,39,0.07)]"
+              className="group overflow-hidden rounded-[28px] border border-[var(--gray-200)] bg-white shadow-[0_20px_50px_rgba(17,24,39,0.08)] transition-transform duration-300 hover:-translate-y-1"
             >
-              <div className={`${item.background} p-4 sm:p-5`}>
-                <div className="overflow-hidden rounded-2xl border border-white/70 bg-white/70">
+              <div className={`${item.background} p-5 sm:p-6`}>
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <span className="inline-flex items-center rounded-full border border-white/80 bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--primary)] shadow-sm">
+                    {item.badge}
+                  </span>
+                  <div className="hidden sm:flex flex-wrap justify-end gap-2">
+                    {item.highlights.map((highlight) => (
+                      <span
+                        key={highlight}
+                        className="rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[var(--gray-700)] border border-white/70"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="overflow-hidden rounded-[24px] border border-white/80 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96)_0%,_rgba(248,250,252,0.98)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[280px] w-full object-contain object-center bg-white p-3 sm:h-[340px] sm:p-4"
+                    className="h-[300px] w-full object-contain object-center p-4 sm:h-[360px] sm:p-6 transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
               </div>
@@ -240,12 +261,22 @@ export default function Products() {
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--primary)]">
                   {item.company}
                 </p>
-                <h3 className="mt-3 text-xl font-bold text-[var(--gray-900)]">
+                <h3 className="mt-3 text-xl font-bold leading-snug text-[var(--gray-900)] sm:text-[1.35rem]">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--gray-600)]">
                   {item.description}
                 </p>
+                <div className="mt-5 flex flex-wrap gap-2 sm:hidden">
+                  {item.highlights.map((highlight) => (
+                    <span
+                      key={highlight}
+                      className="rounded-full bg-[var(--gray-100)] px-3 py-1 text-[11px] font-medium text-[var(--gray-700)]"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
