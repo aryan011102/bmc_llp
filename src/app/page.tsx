@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Brands from "@/components/Brands";
 import Products from "@/components/Products";
-import OurClients from "@/components/OurClients";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <About />
       <Brands />
       <Products />
-      <OurClients />
       <Contact />
     </>
   );
