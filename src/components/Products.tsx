@@ -71,6 +71,23 @@ const productData = [
   },
 ];
 
+const featuredShowcase = [
+  {
+    title: "Industrial Switchgear and Control Solutions",
+    image: "/products/bmc-products.png",
+    background: "bg-sky-50",
+    description:
+      "A curated look at enclosures, breakers, push buttons, protection devices, and industrial control hardware for panel and plant applications.",
+  },
+  {
+    title: "Motors, Metering, and Protection Devices",
+    image: "/products/be-products.jpg",
+    background: "bg-amber-50",
+    description:
+      "A focused mix of motors, measuring instruments, switching devices, and protection products suited for demanding operational environments.",
+  },
+];
+
 export default function Products() {
   const [activeBrand, setActiveBrand] = useState(productData[0].brand);
   const activeData = productData.find((p) => p.brand === activeBrand)!;
@@ -200,6 +217,36 @@ export default function Products() {
             in switchgear, control gear, automation components, protection
             devices, and other essential electrical equipment.
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-16">
+          {featuredShowcase.map((item) => (
+            <article
+              key={item.title}
+              className="overflow-hidden rounded-3xl border border-[var(--gray-200)] bg-white shadow-[0_18px_40px_rgba(17,24,39,0.07)]"
+            >
+              <div className={`${item.background} p-4 sm:p-5`}>
+                <div className="overflow-hidden rounded-2xl border border-white/70 bg-white/70">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-[280px] w-full object-cover object-center sm:h-[340px]"
+                  />
+                </div>
+              </div>
+              <div className="p-6 sm:p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--primary)]">
+                  Featured Product View
+                </p>
+                <h3 className="mt-3 text-xl font-bold text-[var(--gray-900)]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--gray-600)]">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
 
         {/* Brand tabs */}
