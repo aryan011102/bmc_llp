@@ -80,6 +80,7 @@ const featuredShowcase = [
       "bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,_#f3f8ff_0%,_#ffffff_100%)]",
     badge: "BMC LLP Range",
     highlights: ["Switchgear", "Protection", "Panels"],
+    imageClass: "max-h-[250px] sm:max-h-[300px]",
     description:
       "A curated view of the switchgear, enclosures, breakers, push buttons, protection devices, and industrial control hardware supplied through Bengal Machinery Corporation LLP for panel and plant applications.",
   },
@@ -91,6 +92,7 @@ const featuredShowcase = [
       "bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.18),_transparent_38%),linear-gradient(180deg,_#fff9ee_0%,_#ffffff_100%)]",
     badge: "Bengal Electricals Range",
     highlights: ["Motors", "Metering", "Control"],
+    imageClass: "max-h-[230px] sm:max-h-[285px]",
     description:
       "A focused presentation of the motors, measuring instruments, switching devices, and protection products handled by Bengal Electricals for demanding operational environments.",
   },
@@ -249,11 +251,11 @@ export default function Products() {
                     ))}
                   </div>
                 </div>
-                <div className="overflow-hidden rounded-[24px] border border-white/80 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96)_0%,_rgba(248,250,252,0.98)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                <div className="flex min-h-[290px] items-center justify-center overflow-hidden rounded-[24px] border border-white/80 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96)_0%,_rgba(248,250,252,0.98)_100%)] px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:min-h-[340px] sm:px-6 sm:py-6">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[300px] w-full object-contain object-center p-4 sm:h-[360px] sm:p-6 transition-transform duration-500 group-hover:scale-[1.02]"
+                    className={`h-auto w-auto max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02] ${item.imageClass}`}
                   />
                 </div>
               </div>
