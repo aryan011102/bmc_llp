@@ -71,32 +71,20 @@ const productData = [
   },
 ];
 
-const featuredShowcase = [
-  {
-    company: "Bengal Machinery Corporation LLP",
-    title: "Industrial Switchgear and Control Solutions",
-    image: "/products/bmc-products.png",
-    background:
-      "bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_38%),linear-gradient(180deg,_#f3f8ff_0%,_#ffffff_100%)]",
-    badge: "BMC LLP Range",
-    highlights: ["Switchgear", "Protection", "Panels"],
-    imageClass: "max-h-[250px] sm:max-h-[300px]",
-    description:
-      "A curated view of the switchgear, enclosures, breakers, push buttons, protection devices, and industrial control hardware supplied through Bengal Machinery Corporation LLP for panel and plant applications.",
-  },
-  {
-    company: "Bengal Electricals",
-    title: "Motors, Metering, and Protection Devices",
-    image: "/products/be-products.jpg",
-    background:
-      "bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.18),_transparent_38%),linear-gradient(180deg,_#fff9ee_0%,_#ffffff_100%)]",
-    badge: "Bengal Electricals Range",
-    highlights: ["Motors", "Metering", "Control"],
-    imageClass: "max-h-[230px] sm:max-h-[285px]",
-    description:
-      "A focused presentation of the motors, measuring instruments, switching devices, and protection products handled by Bengal Electricals for demanding operational environments.",
-  },
-];
+const featuredShowcase = {
+  badge: "Unified Product Catalog",
+  title: "A consolidated view of our complete industrial electrical offering",
+  image: "/products/complete-catalog.png",
+  description:
+    "This catalog board brings together the product categories handled across our partner brands, including switchgear, enclosures, protection devices, operator controls, metering solutions, and electric motors.",
+  highlights: [
+    "Switchgear & Enclosures",
+    "Circuit Protection",
+    "Operator Controls",
+    "Metering",
+    "Electric Motors",
+  ],
+};
 
 export default function Products() {
   const [activeBrand, setActiveBrand] = useState(productData[0].brand);
@@ -229,60 +217,54 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 mb-16">
-          {featuredShowcase.map((item) => (
-            <article
-              key={item.title}
-              className="group overflow-hidden rounded-[28px] border border-[var(--gray-200)] bg-white shadow-[0_20px_50px_rgba(17,24,39,0.08)] transition-transform duration-300 hover:-translate-y-1"
-            >
-              <div className={`${item.background} p-5 sm:p-6`}>
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="inline-flex items-center rounded-full border border-white/80 bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--primary)] shadow-sm">
-                    {item.badge}
+        <article className="mb-16 overflow-hidden rounded-[30px] border border-[var(--gray-200)] bg-white shadow-[0_22px_60px_rgba(17,24,39,0.08)]">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.12),_transparent_38%),linear-gradient(180deg,_#f8fbff_0%,_#ffffff_100%)] p-5 sm:p-7">
+              <div className="flex min-h-[420px] items-center justify-center overflow-hidden rounded-[26px] border border-white/80 bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(249,250,251,0.98)_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] sm:min-h-[560px] sm:p-6">
+                <img
+                  src={featuredShowcase.image}
+                  alt={featuredShowcase.title}
+                  className="h-auto w-auto max-h-[380px] max-w-full object-contain object-center sm:max-h-[520px]"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+              <span className="inline-flex w-fit items-center rounded-full bg-[var(--primary)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--primary)]">
+                {featuredShowcase.badge}
+              </span>
+              <h3 className="mt-4 text-2xl font-bold leading-snug text-[var(--gray-900)] sm:text-[2rem]">
+                {featuredShowcase.title}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-[var(--gray-600)] sm:text-[15px]">
+                {featuredShowcase.description}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {featuredShowcase.highlights.map((highlight) => (
+                  <span
+                    key={highlight}
+                    className="rounded-full bg-[var(--gray-100)] px-3 py-1.5 text-[11px] font-medium text-[var(--gray-700)]"
+                  >
+                    {highlight}
                   </span>
-                  <div className="hidden sm:flex flex-wrap justify-end gap-2">
-                    {item.highlights.map((highlight) => (
-                      <span
-                        key={highlight}
-                        className="rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[var(--gray-700)] border border-white/70"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex min-h-[290px] items-center justify-center overflow-hidden rounded-[24px] border border-white/80 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96)_0%,_rgba(248,250,252,0.98)_100%)] px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:min-h-[340px] sm:px-6 sm:py-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className={`h-auto w-auto max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02] ${item.imageClass}`}
-                  />
-                </div>
+                ))}
               </div>
-              <div className="p-6 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--primary)]">
-                  {item.company}
+
+              <div className="mt-8 rounded-2xl border border-[var(--gray-200)] bg-[var(--gray-50)] p-5">
+                <p className="text-sm font-semibold text-[var(--gray-900)]">
+                  Brand-spanning product visibility
                 </p>
-                <h3 className="mt-3 text-xl font-bold leading-snug text-[var(--gray-900)] sm:text-[1.35rem]">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--gray-600)]">
-                  {item.description}
+                <p className="mt-2 text-sm leading-relaxed text-[var(--gray-600)]">
+                  The full catalog image is presented as a reference overview so
+                  visitors can quickly understand the breadth of solutions
+                  available across our electrical supply portfolio without
+                  losing any product detail.
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2 sm:hidden">
-                  {item.highlights.map((highlight) => (
-                    <span
-                      key={highlight}
-                      className="rounded-full bg-[var(--gray-100)] px-3 py-1 text-[11px] font-medium text-[var(--gray-700)]"
-                    >
-                      {highlight}
-                    </span>
-                  ))}
-                </div>
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+          </div>
+        </article>
 
         {/* Brand tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
