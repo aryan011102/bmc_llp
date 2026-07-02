@@ -227,17 +227,20 @@ export default function Products() {
         </div>
 
         {/* Product list */}
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="relative overflow-hidden rounded-2xl border border-[var(--gray-200)] bg-white p-8 shadow-sm">
-            <img
+            <div
               key={activeData.brand}
-              src={activeData.backgroundImage}
-              alt=""
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover opacity-[0.14] transition-opacity duration-300"
+              className="absolute inset-0 scale-105 bg-cover bg-center transition-all duration-500"
+              style={{
+                backgroundImage: `url(${activeData.backgroundImage})`,
+                opacity: 0.34,
+              }}
             />
-            <div className="absolute inset-0 bg-white/80" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white/90" />
+            <div className="absolute inset-0 bg-white/55" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/45 to-white/85" />
+            <div className="absolute inset-0 backdrop-blur-[1px]" />
 
             <h3 className="relative text-xl font-bold text-[var(--primary)] mb-6 text-center">
               {activeData.brand}
@@ -246,7 +249,7 @@ export default function Products() {
               {activeData.categories.map((cat, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-white/70 shadow-sm"
+                  className="flex items-start gap-3 bg-white/80 backdrop-blur-md rounded-xl p-4 border border-white/80 shadow-sm"
                 >
                   <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-[var(--primary)] font-bold text-xs">
