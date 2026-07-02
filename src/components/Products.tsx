@@ -6,6 +6,7 @@ import { useState } from "react";
 const productData = [
   {
     brand: "Schneider Electric",
+    backgroundImage: "/product-backgrounds/schneider.jpg",
     categories: [
       "ACB, MCCB & SDF",
       "Contactor, Relay & MPCB",
@@ -17,6 +18,7 @@ const productData = [
   },
   {
     brand: "Lauritz Knudsen",
+    backgroundImage: "/product-backgrounds/lauritz-knudsen.png",
     categories: [
       "ACB & MCCB",
       "On-load Changeover Switch-Disconnectors & Switch Disconnector Fuse Unit",
@@ -30,6 +32,7 @@ const productData = [
   },
   {
     brand: "CG Power",
+    backgroundImage: "/product-backgrounds/cg-power.png",
     categories: [
       "Three Phase Foot / Flange Mounted Motors (IE2, IE3, IE4)",
       "Single Phase Motor",
@@ -39,6 +42,7 @@ const productData = [
   },
   {
     brand: "Automatic Electric Ltd.",
+    backgroundImage: "/product-backgrounds/automatic-electric.jpg",
     categories: [
       "Voltmeter",
       "Ammeter",
@@ -48,10 +52,12 @@ const productData = [
   },
   {
     brand: "Kaycee",
+    backgroundImage: "/product-backgrounds/kaycee.jpg",
     categories: ["Rotary Switch", "Toggle Switch", "Limit Switch"],
   },
   {
     brand: "GIC",
+    backgroundImage: "/product-backgrounds/gic.webp",
     categories: [
       "Timers & Time Switches",
       "Voltage Monitoring Relay",
@@ -61,6 +67,7 @@ const productData = [
   },
   {
     brand: "Salzer",
+    backgroundImage: "/product-backgrounds/salzer.jpg",
     categories: [
       "Rotary Switch",
       "Load Break Switch",
@@ -221,15 +228,25 @@ export default function Products() {
 
         {/* Product list */}
         <div className="max-w-3xl mx-auto">
-          <div className="bg-[var(--gray-50)] rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-[var(--primary)] mb-6 text-center">
+          <div className="relative overflow-hidden rounded-2xl border border-[var(--gray-200)] bg-white p-8 shadow-sm">
+            <img
+              key={activeData.brand}
+              src={activeData.backgroundImage}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover opacity-[0.14] transition-opacity duration-300"
+            />
+            <div className="absolute inset-0 bg-white/80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white/90" />
+
+            <h3 className="relative text-xl font-bold text-[var(--primary)] mb-6 text-center">
               {activeData.brand}
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
               {activeData.categories.map((cat, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 border border-[var(--gray-200)]"
+                  className="flex items-start gap-3 bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-white/70 shadow-sm"
                 >
                   <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-[var(--primary)] font-bold text-xs">
