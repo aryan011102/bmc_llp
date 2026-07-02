@@ -209,42 +209,60 @@ export default function Products() {
           </p>
         </div>
 
-        {/* Brand tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {productData.map((item) => (
-            <button
-              key={item.brand}
-              onClick={() => setActiveBrand(item.brand)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                activeBrand === item.brand
-                  ? "bg-[var(--primary)] text-white shadow-md"
-                  : "bg-[var(--gray-100)] text-[var(--gray-700)] hover:bg-[var(--gray-200)]"
-              }`}
-            >
-              {item.brand}
-            </button>
-          ))}
-        </div>
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-[var(--gray-200)] bg-white p-5 shadow-[0_18px_50px_rgba(17,24,39,0.08)] sm:p-8">
+          <div
+            key={activeData.brand}
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-center transition-all duration-500"
+            style={{
+              backgroundImage: `url(${activeData.backgroundImage})`,
+              opacity: 0.42,
+            }}
+          />
+          <div className="absolute inset-0 bg-white/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/55 to-white/75" />
 
-        {/* Product list */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--gray-200)] bg-white p-8 shadow-sm">
+          <div className="relative mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
+                Active Brand
+              </p>
+              <h3 className="mt-2 text-2xl font-bold text-[var(--gray-900)]">
+                {activeData.brand}
+              </h3>
+            </div>
+
+            {/* Brand tabs */}
+            <div className="flex flex-wrap gap-2 lg:justify-end">
+              {productData.map((item) => (
+                <button
+                  key={item.brand}
+                  onClick={() => setActiveBrand(item.brand)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    activeBrand === item.brand
+                      ? "bg-[var(--primary)] text-white shadow-md"
+                      : "bg-white/80 text-[var(--gray-700)] hover:bg-white border border-white/80"
+                  }`}
+                >
+                  {item.brand}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Product list */}
+          <div className="relative max-w-4xl">
+            <div className="relative overflow-hidden rounded-2xl border border-white/75 bg-white/75 p-6 shadow-sm backdrop-blur-md sm:p-8">
             <div
-              key={activeData.brand}
               aria-hidden="true"
-              className="absolute inset-0 scale-105 bg-cover bg-center transition-all duration-500"
+              className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url(${activeData.backgroundImage})`,
-                opacity: 0.34,
+                opacity: 0.22,
               }}
             />
-            <div className="absolute inset-0 bg-white/55" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/45 to-white/85" />
-            <div className="absolute inset-0 backdrop-blur-[1px]" />
+            <div className="absolute inset-0 bg-white/68" />
 
-            <h3 className="relative text-xl font-bold text-[var(--primary)] mb-6 text-center">
-              {activeData.brand}
-            </h3>
             <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
               {activeData.categories.map((cat, idx) => (
                 <div
@@ -261,6 +279,7 @@ export default function Products() {
                   </span>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>
