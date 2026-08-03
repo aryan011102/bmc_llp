@@ -213,14 +213,18 @@ export default function Products() {
           <div
             key={activeData.brand}
             aria-hidden="true"
-            className="absolute inset-0 bg-cover bg-center transition-all duration-500"
-            style={{
-              backgroundImage: `url(${activeData.backgroundImage})`,
-              opacity: 0.42,
-            }}
+            className="absolute inset-0 transition-all duration-500"
           />
-          <div className="absolute inset-0 bg-white/50" />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/55 to-white/75" />
+          <img
+            key={`${activeData.brand}-backdrop`}
+            src={activeData.backgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-contain object-center opacity-25 transition-all duration-500"
+            style={{ filter: "brightness(1.08) saturate(0.9)" }}
+          />
+          <div className="absolute inset-0 bg-white/38" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/65 via-white/35 to-white/60" />
 
           <div className="relative mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
@@ -252,34 +256,24 @@ export default function Products() {
 
           {/* Product list */}
           <div className="relative max-w-4xl">
-            <div className="relative overflow-hidden rounded-2xl border border-white/75 bg-white/75 p-6 shadow-sm backdrop-blur-md sm:p-8">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${activeData.backgroundImage})`,
-                opacity: 0.22,
-              }}
-            />
-            <div className="absolute inset-0 bg-white/68" />
-
-            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {activeData.categories.map((cat, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-start gap-3 bg-white/80 backdrop-blur-md rounded-xl p-4 border border-white/80 shadow-sm"
-                >
-                  <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[var(--primary)] font-bold text-xs">
-                      {idx + 1}
+            <div className="relative overflow-hidden rounded-2xl border border-white/75 bg-white/68 p-6 shadow-sm backdrop-blur-md sm:p-8">
+              <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {activeData.categories.map((cat, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-3 rounded-xl border border-white/80 bg-white/88 p-4 shadow-sm backdrop-blur-sm"
+                  >
+                    <div className="w-8 h-8 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-[var(--primary)] font-bold text-xs">
+                        {idx + 1}
+                      </span>
+                    </div>
+                    <span className="text-sm text-[var(--gray-700)] font-medium leading-snug">
+                      {cat}
                     </span>
                   </div>
-                  <span className="text-sm text-[var(--gray-700)] font-medium leading-snug">
-                    {cat}
-                  </span>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
